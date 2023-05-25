@@ -1,9 +1,278 @@
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'books:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No books are available.</p>
-{% endif %}
+{% extends './base.html' %}
+{% block content%}
+<body>
+	<div id="wrap"><section>
+			<div id="section-articles">
+				<div class="title">
+					<strong>
+						코딩! 더 이상<br>
+						선택이 아닙니다.
+					</strong>
+					<p>
+						여러분은 이미 코딩이 중요하다는 것을<br>
+						알고 계십니다.
+					</p>
+				</div>
+				<div class="items">
+					<div class="item">
+						<strong>
+							'컴퓨터 언어' 코딩, 초등학교부터 배운다… 2025년 적용(종합)
+						</strong>
+						<p>
+							정부가 전 국민의 디지털 소양을 강화하는 차원에서 초등학생과 중학생이
+							한 학기 의무적으로 들어야 하는 정보 수업 시간을 최소 2배 이상 늘린다.
+							이 과정에서 컴퓨터 언어인 '코딩' 교육을 필수화해 디지털적 문재해결
+						</p>
+						<span>뉴시스 2022.08.22</span>
+						<a href="https://mobile.newsis.com/view.html?ar_id=NISX20220822_0001986131" target="_blank">더보기</a>
+					</div>
+					<div class="item">
+						<strong>
+							2026년까지 디지털 초·중·고급 인재 100만명 키운다
+						</strong>
+						<p>
+							정부가 전 국민의 디지털 교육 기회를 늘려 2022년부터 2026년까지 5년간
+							모두 100만명의 디지털 인재를 육성하기로 했다. 산업계에서 활약할
+							전문인력뿐 아니라 자신의 전공 분야에 디지털 기술을 융합할 수 있는 인력
+						</p>
+						<span>연합뉴스 2022.08.22</span>
+						<a href="https://www.yna.co.kr/view/AKR20220822012000530" target="_blank">더보기</a>
+					</div>
+					<div class="item">
+						<strong>
+							尹 "검찰총장 그만두고 코딩학원 다녔다" 깜짝 고백
+						</strong>
+						<p>
+							참석자들에 따르면 윤 대통령은 지난해 3월 검찰총장을 사퇴하고 정치 입문을
+							준비하던 시기에 주변에 알리지 않고 홀로 컴퓨터 언어로 프로그램을 만드는
+							코딩 학원에 다녔다고 한다. 윤 대통령은 “그때 충격을 받았다.
+						</p>
+						<span>중앙일보  2022.09.14</span>
+						<a href="https://www.joongang.co.kr/article/25101615" target="_blank">더보기</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="section-intro">
+				<div class="title">
+					<strong>
+						여기 맞아요.<br>
+						쉽게 잘 가르치는 곳.
+					</strong>
+					<p>
+						코딩교육 현장에서 교육과정을 끊임없이 연구하고 개발합니다.<br>
+						수강생 개인에게 적합한 교수법을 적용하여 가르칩니다.<br>
+						스스로 코딩할 수 있도록 코칭합니다.
+					</p>
+				</div>
+				<div class="items">
+					<div class="item">
+						<img src="img/section-intro-icon1.png" alt="icon">
+						<span>컴퓨터공학 전공</span>
+					</div>
+					<div class="item">
+						<img src="img/section-intro-icon2.png" alt="icon">
+						<span>현직 프로그래머</span>
+					</div>
+					<div class="item">
+						<img src="img/section-intro-icon3.png" alt="icon">
+						<span>양질의 커리큘럼</span>
+					</div>
+				</div>
+				<a href="curriculum-coding.html" class="bt1">커리큘럼 자세히 보기</a>
+			</div>
+		</section>
+		<section>
+			<div id="section-math">
+				<div class="title">
+					<span>영재교육원 입학을 준비하고 있다면?</span>
+					<strong>수학 코딩</strong>
+				</div>
+				<img src="img/section-math-illust.png" alt="illust">
+				<p>
+					컴퓨팅 시스템, 알고리즘, 프로그래밍, 자료,<br>
+					규칙성 등이	수학과 함께 녹아들어 있는<br>
+					다양한 문제를 해결해보는 과정에서<br>
+					수학적 사고력과 컴퓨팅 사고력을 기르는 과정입니다.
+				</p>
+				<a href="curriculum-math.html" class="bt1">커리큘럼 자세히 보기</a>
+			</div>
+		</section>
+		<section>
+			<div id="section-computerclass">
+				<div class="title">
+					<span>나중에는 바빠요~ 미리 배워두세요.</span>
+					<strong>매일컴퓨터반</strong>
+					<p>
+						컴퓨터보다 스마트폰이 더 익숙한 시대입니다.<br>
+						하지만 컴퓨터가 쓰이는 곳은 아직도 많죠.<br>
+						기본 중의 기본, 이것만 알면<br>
+						갑자기 이 프로그램들을 사용해야 할 때<br>
+						당황할 일이 없을 거예요.
+					</p>
+				</div>
+				<div class="icons">
+					<div class="icon">
+						<img src="img/section-computerclass-icon1.png" alt="icon">
+						<span>윈도우</span>
+					</div>
+					<div class="icon">
+						<img src="img/section-computerclass-icon2.png" alt="icon">
+						<span>한글</span>
+					</div>
+					<div class="icon">
+						<img src="img/section-computerclass-icon3.png" alt="icon">
+						<span>파워포인트</span>
+					</div>
+					<div class="icon">
+						<img src="img/section-computerclass-icon4.png" alt="icon">
+						<span>영상편집</span>
+					</div>
+				</div>
+				<a href="curriculum-computer.html" class="bt1">커리큘럼 자세히 보기</a>
+			</div>
+		</section>
+		<section>
+			<div id="section-curriculum">
+				<div class="item item1">
+					<div class="title">
+						<span>파이썬을 쉽게 배우는 혁신적인 방법</span>
+						<strong>코드얼라이브 도입</strong>
+					</div>
+					<img src="img/section-curriculum-logo1.png" alt="codealive" class="logo">
+					<p>
+						codeAlive는 코딩 초보자도 쉽고 재미있게<br>
+						파이썬 프로그래밍을 배울 수 있는<br>
+						실시간 인터랙티브 코딩교육 플랫폼입니다.<br>
+						유니티 엔진 기반의 혁신적인 비주얼 프로그래밍은<br>
+						미래를 준비하는 가장 빠른 방법을 안내합니다.
+					</p>
+					<p>
+						<a href="https://www.codealive.co.kr/setup" class="bt1" target="_blank">코드얼라이브 다운로드하러가기</a>
+					</p>
+					<div class="video-wrap">
+						<iframe src="https://www.youtube.com/embed/IeGj7s_KuFg" title="codeAlive I 실시간 인터랙티브 코딩교육 플랫폼" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="item item2">
+					<div class="title">
+						<span>코딩교육 시작부터 제대로</span>
+						<strong>코딩앤플레이</strong>
+					</div>
+					<img src="img/section-curriculum-logo2.png" alt="codealive" class="logo">
+					<p>
+						코딩앤플레이는 국내 최초로 어린이 코딩교육<br>
+						커리큘럼을 개발한 1세대 코딩교육 전문 기업입니다. <br>
+						자체 개발한 교재를 통해 체계적으로<br>
+						아이들의 문제해결능력과 컴퓨팅사고력을 길러줍니다.
+					</p>
+					<div class="icons">
+						<div class="icon">
+							<img src="img/section-curriculum-icon1.png" alt="icon">
+							<span>논리적 사고력</span>
+						</div>
+						<div class="icon">
+							<img src="img/section-curriculum-icon2.png" alt="icon">
+							<span>창의적 사고력</span>
+						</div>
+						<div class="icon">
+							<img src="img/section-curriculum-icon3.png" alt="icon">
+							<span>커뮤니케이션</span>
+						</div>
+						<div class="icon">
+							<img src="img/section-curriculum-icon4.png" alt="icon">
+							<span>문제해결능력</span>
+						</div>
+					</div>
+					<div class="video-wrap">
+						<iframe src="https://www.youtube.com/embed/hbhwST0C9po" title="코딩교육 코딩앤플레이" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="section-introduce">
+				<div class="item item1">
+					<strong>우리 학원은 전국구</strong>
+					<p>
+						렛츠코딩앤플레이 컴퓨터학원은 전국 규모의<br>
+						대회에 출전하여 실력을 발휘하고 있습니다.
+					</p>
+					<div class="logos">
+						<div class="logo">
+							<img src="img/section-introduce-logo1.png" alt="logo">
+							<span>한국코드페어</span>
+						</div>
+						<div class="logo">
+							<img src="img/section-introduce-logo2.png" alt="logo">
+							<span>한국비버챌린지</span>
+						</div>
+						<div class="logo">
+							<img src="img/section-introduce-logo3.png" alt="logo">
+							<span>삼성 주니어 소프트웨어 창작대회</span>
+						</div>
+					</div>
+				</div>
+				<div class="item item2">
+					<p>
+						유튜브에서 렛츠코딩앤플레이를 검색해보세요.<br>
+						학원에서 제작한 강의 동영상이<br>
+						전국에 있는 많은 분들께 도움이 되고 있습니다.
+					</p>
+					<a href="https://www.youtube.com/c/%EB%A0%9B%EC%B8%A0%EC%BD%94%EB%94%A9%EC%95%A4%ED%94%8C%EB%A0%88%EC%9D%B4" target="_blank"><img src="img/section-introduce-youtube.png" alt="logo"></a>
+					<div class="infos">
+						<div>
+							<span>구독자</span>
+							<b>1034명</b>
+						</div>
+						<div>
+							<span>누적 조회수</span>
+							<b>128,807회</b>
+						</div>
+						<div>
+							<span>총 재생시간</span>
+							<b>4500시간</b>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="section-location">
+				<div class="title">
+					<strong>오시는 길</strong>
+				</div>
+				<p>
+					렛츠코딩앤플레이 컴퓨터학원은<br>
+					전북혁신도시 대방디엠시티 아파트에서<br>
+					서쪽으로 건너편에 위치하고 있습니다.
+				</p>
+				<div class="map-wrap">
+					<!-- * 카카오맵 - 지도퍼가기 -->
+					<!-- 1. 지도 노드 -->
+					<div id="daumRoughmapContainer1664705044311" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+					<!--
+						2. 설치 스크립트
+						* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+					-->
+					<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+					<!-- 3. 실행 스크립트 -->
+					<script charset="UTF-8">
+						new daum.roughmap.Lander({
+							"timestamp" : "1664705044311",
+							"key" : "2bw9q",
+							"mapWidth" : "800",
+							"mapHeight" : "260"
+						}).render();
+					</script>
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+</body>
+{% endblock %}

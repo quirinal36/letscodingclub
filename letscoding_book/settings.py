@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['www.letscoding.club']
 # Application definition
 
 INSTALLED_APPS = [
+    'catalog.apps.CatalogConfig',
     'books.apps.BooksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,8 +77,15 @@ WSGI_APPLICATION = 'letscoding_book.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'locallibrary',  # 스키마명
+        'USER': 'turboguy', # 유저명
+        'PASSWORD': '789gagul', # 유저 비밀번호
+        'HOST': 'aa16n2xkpj5nl66.cbqm3rfz7crw.ap-northeast-2.rds.amazonaws.com', #공백으로 냅두면 default localhost
+        'PORT': '' #공백으로 냅두면 default 3306
     }
 }
 
